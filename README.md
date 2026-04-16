@@ -14,4 +14,4 @@ intencionalmente como placeholders, permitindo liberdade
 criativa para futuras atualizações.
 
 ## Status
-Em desenvolvimento.
+Versão 1.0 concluída — melhorias visuais planejadas.
