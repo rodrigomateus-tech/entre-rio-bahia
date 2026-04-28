@@ -5,145 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entre o Rio e a Bahia 💙</title>
     
-    <!-- 4. Meta Tags de Compartilhamento (para WhatsApp) -->
     <meta property="og:title" content="Entre o Rio e a Bahia 💙">
     <meta property="og:description" content="Um cantinho criado com amor pra você.">
     <meta property="og:image" content="https://i.imgur.com/a4EiVrl.jpeg">
-    <!-- EDITE AQUI: A imagem de preview. Pode usar a mesma da capa -->
     <meta property="og:type" content="website">
 
-    <!-- 3. Adicionar favicon (ícone na aba) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
     
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
     
-    <style>
-        /* Define as fontes e o scroll suave */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* 2. Transição de fundo dinâmica */
-        @keyframes bg-move {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Aplicando o gradiente animado */
-            background: linear-gradient(270deg, #edf6ff, #cfe8ff, #a2d2ff);
-            background-size: 600% 600%;
-            animation: bg-move 15s ease infinite;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Animação de pulsação para os corações */
-        @keyframes pulse-heart {
-          0%, 100% { transform: scale(1); opacity: 1; }
-          50% { transform: scale(1.3); opacity: 0.7; }
-        }
-        .pulse-heart {
-          animation: pulse-heart 1.5s ease-in-out infinite;
-        }
-
-        /* Sombra suave para o texto da capa */
-        .text-shadow-custom {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Efeito de digitação (cursor) */
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        .blinking-cursor::after {
-            content: '|';
-            font-weight: 300;
-            animation: blink 1s step-end infinite;
-            margin-left: 2px;
-        }
-
-        /* Animação suave no contador */
-        @keyframes jump {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        .jump {
-            animation: jump 0.3s ease-out;
-        }
-
-        /* Efeito suave ao "Mostrar mensagem" */
-        #messageContent {
-            opacity: 0;
-            visibility: hidden; /* Começa oculto */
-            transition: opacity 0.8s ease-in-out, visibility 0s linear 0.8s; /* Esconde após o fade out */
-        }
-        #messageContent.is-visible {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.8s ease-in-out;
-        }
-
-        /* Transição suave entre as fotos da galeria */
-        #slider img {
-            transition: opacity 1s ease-in-out;
-        }
-
-        /* Fade-in ao rolar a tela */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 5. CSS do Easter Egg */
-        .easter-egg {
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        /* Melhorar o visual mobile */
-        @media (max-width: 640px) {
-            section { 
-                padding-top: 3rem; 
-                padding-bottom: 3rem; 
-                padding-left: 1rem; 
-                padding-right: 1rem; 
-            }
-            h1 { font-size: 2.5rem; }
-            /* Seleciona botões e links para mais área de toque */
-            .bg-white.text-pink-500, /* Botão Capa */
-            .bg-green-500, /* Botões Spotify */
-            .bg-pink-500, /* Botão Mensagem */
-            .bg-gray-400, /* Botão Esconder */
-            #prevBtn, #nextBtn /* Botões Galeria */
-            { 
-                padding: 0.8rem 1.5rem; 
-                font-size: 1rem; 
-            }
-            /* Citação flutuante menor no mobile */
-            .floating-quote {
-                padding: 0.5rem 1rem;
-                font-size: 0.75rem; /* 12px */
-                bottom: 2;
-                right: 2;
-            }
-        }
-    </style>
-    
-    <!-- Configuração customizada do Tailwind (para fontes e cores) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -162,31 +35,132 @@
             }
         }
     </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(270deg, #edf6ff, #cfe8ff, #a2d2ff);
+            background-size: 600% 600%;
+            animation: bg-move 15s ease infinite;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes bg-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse-heart {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        .pulse-heart {
+            display: inline-block; /* Garante que a escala funcione perfeitamente */
+            animation: pulse-heart 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .blinking-cursor::after {
+            content: '|';
+            font-weight: 300;
+            animation: blink 1s step-end infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .jump {
+            animation: jump 0.3s ease-out;
+        }
+
+        .text-shadow-custom {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden-message {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, visibility 0s linear 0.8s;
+        }
+
+        .hidden-message.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        #slider img {
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .easter-egg {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        @media (max-width: 640px) {
+            section { 
+                padding-top: 3rem; 
+                padding-bottom: 3rem; 
+                padding-left: 1rem; 
+                padding-right: 1rem; 
+            }
+            h1 { font-size: 2.5rem; }
+            
+            .bg-white.text-pink-500,
+            .bg-green-500,
+            .bg-pink-500,
+            .bg-gray-400,
+            #prevBtn, #nextBtn { 
+                padding: 0.8rem 1.5rem; 
+                font-size: 1rem; 
+            }
+            
+            .floating-quote {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+                bottom: 0.5rem;
+                right: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Bloco 1: Capa -->
-    <section 
-        id="capa" 
-        class="h-screen w-full flex flex-col items-center justify-center text-center text-white p-4"
-        style="background-image: url('https://i.imgur.com/a4EiVrl.jpeg'); background-size: cover; background-position: center;"
-    >
-        <!-- EDITE AQUI: Troque a URL da imagem de fundo acima por uma foto de vocês ou um céu bonito -->
-        
-        <!-- 3. Efeito de máquina de escrever REMOVIDO do título -->
-        <h1 id="main-title" class="font-playfair font-bold text-5xl leading-snug md:text-7xl lg:text-8xl text-shadow-custom">Entre o Rio e a Bahia 💙</h1>
-        
-        <!-- Efeito de digitação (subtítulo, já existia) -->
+    <section id="capa" class="h-screen w-full flex flex-col items-center justify-center text-center text-white p-4" style="background-image: url('https://i.imgur.com/a4EiVrl.jpeg'); background-size: cover; background-position: center;">
+        <h1 id="main-title" class="font-playfair font-bold text-5xl md:text-7xl lg:text-8xl text-shadow-custom cursor-pointer select-none">Entre o Rio e a Bahia 💙</h1>
         <p id="subtitle" class="font-inter text-xl md:text-3xl mt-4 mb-12 text-shadow-custom min-h-[60px] md:min-h-[auto]"></p>
-        
         <a href="#razao" class="bg-white text-pink-500 font-bold py-3 px-8 rounded-full shadow-lg text-lg transform transition-transform hover:scale-110">
             Clique para sentir meu amor 💙
         </a>
     </section>
 
-    <!-- Bloco 2: A Razão -->
     <section id="razao" class="py-24 px-6 text-center fade-in-section">
-        <!-- O texto agora está dentro de um card estilizado -->
         <div class="max-w-3xl mx-auto bg-white p-10 md:p-12 rounded-lg shadow-lg border-t-4 border-azul-medio">
             <p class="font-playfair italic text-2xl md:text-4xl text-gray-700 leading-relaxed">
                 "Porque amar não é apenas sentir; é decidir. É estar presente, mesmo quando é difícil. É acreditar, mesmo quando há dúvidas. E, acima de tudo, é saber que, enquanto existir esse sentimento, sempre haverá luz suficiente para guiar qualquer história."
@@ -194,10 +168,8 @@
         </div>
     </section>
 
-    <!-- Bloco 3: Contador Regressivo -->
     <section id="contador" class="py-24 px-6 bg-azul-fundo text-center fade-in-section">
         <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-10">Contando os segundos para te abraçar de novo 💙</h2>
-        
         <div id="countdown-container" class="flex flex-wrap justify-center gap-4 md:gap-8">
             <div class="bg-white p-6 rounded-lg shadow-md min-w-[100px]">
                 <span id="dias" class="block text-5xl font-bold text-blue-600">00</span>
@@ -216,221 +188,138 @@
                 <span class="text-lg font-inter">Segundos</span>
             </div>
         </div>
-        
         <div id="mensagem-zero" class="hidden mt-10 text-4xl font-playfair font-bold text-blue-700">
             Chegou a hora do nosso abraço 💙
         </div>
     </section>
 
-    <!-- Bloco 4: Playlists -->
     <section id="playlists" class="py-24 px-6 fade-in-section">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            
-            <!-- Coluna 1: Frase de Músicas -->
             <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-azul-medio flex flex-col items-center">
                 <h3 class="text-3xl font-playfair font-bold mb-6 text-center">Uma frase feita de músicas 💙</h3>
-                
-                <!-- IMAGEM ILUSTRATIVA -->
-                <img src="assets/playlist-1.png" 
-                     alt="Capa da Playlist 1" 
-                     class="w-full max-w-[300px] h-auto rounded-lg shadow-md mb-8">
-                <!-- EDITE AQUI: Troque o 'src' da imagem acima pela capa real da sua playlist -->
-                
-                <a href="" class="mt-auto inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105">
-                    <!-- EDITE AQUI: Troque o '#' pelo link da playlist -->
-                    Espaço reservado para futuras playlists
+                <img src="assets/playlist-1.png" alt="Capa da Playlist: Frase de Músicas" class="w-full max-w-[300px] h-auto rounded-lg shadow-md mb-8">
+                <a href="#" class="mt-auto inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105">
+                    Ouvir no Spotify
                 </a>
             </div>
             
-            <!-- Coluna 2: Som do Nosso Amor -->
             <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-azul-medio flex flex-col items-center">
                 <h3 class="text-3xl font-playfair font-bold mb-6 text-center">O som do nosso amor 💙</h3>
-
-                <!-- IMAGEM ILUSTRATIVA -->
-                <img src="assets/playlist-1.png" 
-                     alt="Capa da Playlist 2" 
-                     class="w-full max-w-[300px] h-auto rounded-lg shadow-md mb-8">
-                <!-- EDITE AQUI: Troque o 'src' da imagem acima pela capa real da sua playlist -->
-
-                <a href="" class="mt-auto inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105">
-                    <!-- EDITE AQUI: Troque o '#' pelo link da playlist -->
-                    Espaço reservado para futuras playlists
+                <img src="assets/playlist-1.png" alt="Capa da Playlist: Som do nosso amor" class="w-full max-w-[300px] h-auto rounded-lg shadow-md mb-8">
+                <a href="#" class="mt-auto inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105">
+                    Ouvir no Spotify
                 </a>
             </div>
-            
         </div>
     </section>
 
-    <!-- Bloco 5: Galeria -->
     <section id="galeria" class="py-24 px-6 bg-azul-fundo fade-in-section">
         <h2 class="text-4xl md:text-5xl font-playfair font-bold text-center mb-10">💙Nossas memórias💙</h2>
-        
         <div class="max-w-2xl mx-auto relative shadow-xl rounded-lg overflow-hidden bg-white">
-            <!-- Container do Slider -->
             <div id="slider" class="flex transition-transform duration-500 ease-in-out">
-                
-                <!-- Slide 1 -->
                 <div class="w-full flex-shrink-0">
-                    <img src="https://via.placeholder.com/800x600?text=Imagem+em+breve" alt="Nossa memória 1" class="w-full h-auto">
-                    <!-- EDITE AQUI: Troque o 'src' da imagem acima -->
+                    <img src="https://via.placeholder.com/800x600?text=Imagem+em+breve" alt="Nossa primeira foto juntos" class="w-full h-auto">
                     <p class="text-center font-inter italic text-lg p-4">"Nosso riso é meu som favorito."</p>
                 </div>
-                
-                <!-- Slide 2 -->
                 <div class="w-full flex-shrink-0">
-                    <img src="https://via.placeholder.com/800x600?text=Imagem+em+breve" alt="Nossa memória 2" class="w-full h-auto">
-                    <!-- EDITE AQUI: Troque o 'src' da imagem acima -->
+                    <img src="https://via.placeholder.com/800x600?text=Imagem+em+breve" alt="Passeio inesquecível" class="w-full h-auto">
                     <p class="text-center font-inter italic text-lg p-4">"Eu desaprendi a viver sem você."</p>
                 </div>
-                
-                <!-- Slide 3 -->
-                <div class="w-full flex-shrink-0">
-                    <img src="https://via.placeholder.com/800x600?text=Imagem+em+breve" alt="Nossa memória 3" class="w-full h-auto">
-                    <!-- EDITE AQUI: Troque o 'src' da imagem acima -->
-                    <p class="text-center font-inter italic text-lg p-4">"O abraço que quero repetir."</p>
-                </div>
-                
-                <!-- Slide 4 -->
-                <div class="w-full flex-shrink-0">
-                    <img src="https://via.placeholder.com/800x600?text=Imagem+em+breve" alt="Nossa memória 4" class="w-full h-auto">
-                    <!-- EDITE AQUI: Troque o 'src' da imagem acima -->
-                    <p class="text-center font-inter italic text-lg p-4">"Você e eu, na nossa primeira foto juntos."</p>
-                </div>
-                
-                <!-- Slide 5 -->
-                <div class="w-full flex-shrink-0">
-                    <img src="https://via.placeholder.com/800x600?text=Imagem+em+breve" alt="Nossa memória 5" class="w-full h-auto">
-                    <!-- EDITE AQUI: Troque o 'src' da imagem acima -->
-                    <p class="text-center font-inter italic text-lg p-4">"Você é a melhor parte de mim."</p>
-                </div>
-                
             </div>
             
-            <!-- Botões de Navegação -->
-            <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md text-2xl text-gray-700 hover:bg-white">
+            <button id="prevBtn" aria-label="Imagem anterior" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md text-2xl text-gray-700 hover:bg-white transition-colors">
                 &#10094;
             </button>
-            <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md text-2xl text-gray-700 hover:bg-white">
+            <button id="nextBtn" aria-label="Próxima imagem" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md text-2xl text-gray-700 hover:bg-white transition-colors">
                 &#10095;
             </button>
         </div>
     </section>
 
-    <!-- Bloco 6: Mapa Simbólico -->
     <section id="mapa" class="py-24 px-6 text-center fade-in-section">
         <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-16">Nossa Conexão</h2>
-        
         <div class="flex justify-between items-center max-w-lg mx-auto">
-            <!-- Ponto RJ -->
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full p-5 shadow-lg text-2xl w-20 h-20 flex items-center justify-center">
-                    RJ
-                </div>
-                <span class="font-bold mt-2 block">Pessoa Amada</span>
+                <div class="bg-blue-600 text-white rounded-full p-5 shadow-lg text-2xl w-20 h-20 flex items-center justify-center">RJ</div>
+                <span class="font-bold mt-2 block">R</span>
             </div>
-            
-            <!-- Corações pulsando -->
-            <div class="flex gap-4 md:gap-8 text-3xl md:text-4xl text-blue-500">
+            <div class="flex gap-4 md:gap-8 text-3xl md:text-4xl text-blue-500" aria-hidden="true">
                 <span class="pulse-heart">💙</span>
                 <span class="pulse-heart" style="animation-delay: 0.3s;">💙</span>
                 <span class="pulse-heart" style="animation-delay: 0.6s;">💙</span>
             </div>
-            
-            <!-- Ponto BA -->
             <div class="text-center">
-                <div class="bg-pink-500 text-white rounded-full p-5 shadow-lg text-2xl w-20 h-20 flex items-center justify-center">
-                    BA
-                </div>
-                <span class="font-bold mt-2 block">Pessoa amada</span>
-                <!-- EDITE AQUI: Se quiser, coloque o nome dela acima -->
+                <div class="bg-pink-500 text-white rounded-full p-5 shadow-lg text-2xl w-20 h-20 flex items-center justify-center">BA</div>
+                <span class="font-bold mt-2 block">T</span>
             </div>
         </div>
-        
         <p class="font-inter text-xl md:text-2xl mt-16 max-w-md mx-auto">"Entre o Rio e a Bahia, o amor encontra o caminho."</p>
     </section>
 
-    <!-- Bloco 7: Mensagem Interativa -->
     <section id="mensagem" class="py-24 px-6 bg-azul-fundo text-center fade-in-section">
         <button id="showBtn" class="bg-pink-500 text-white font-bold py-4 px-10 rounded-full shadow-lg text-xl transform transition-transform hover:scale-110">
             Mostrar mensagem 💌
         </button>
-        
-        <!-- 2. Efeito suave: 'hidden' removido, JS vai controlar com 'is-visible' -->
-        <div id="messageContent" class="mt-8 max-w-xl mx-auto bg-white p-10 rounded-lg shadow-md">
+        <div id="messageContent" class="mt-8 max-w-xl mx-auto bg-white p-10 rounded-lg shadow-md hidden-message">
             <p class="font-inter text-2xl text-gray-700">
                 "Mesmo longe, você é o meu lar. Te espero com o mesmo amor de sempre."
             </p>
-            <button id="hideBtn" class="mt-8 bg-gray-400 text-white font-bold py-2 px-6 rounded-full hover:bg-gray-500">
+            <button id="hideBtn" class="mt-8 bg-gray-400 text-white font-bold py-2 px-6 rounded-full hover:bg-gray-500 transition-colors">
                 Esconder mensagem 💙
             </button>
         </div>
     </section>
 
-    <!-- Bloco 8: Carta Final -->
     <section id="carta" class="py-24 px-6 fade-in-section">
         <div class="max-w-3xl mx-auto bg-white p-10 md:p-16 rounded-lg shadow-xl border-t-8 border-azul-claro">
-            <h3 class="text-3xl font-playfair font-bold mb-6">De: Mim <br> Para: A mulher da minha vida 💙</h3>
-            
+            <h3 class="text-3xl font-playfair font-bold mb-6">De: R <br> Para: T 💙</h3>
             <div class="font-inter text-lg space-y-4 text-gray-700 leading-relaxed">
-                <!-- EDITE AQUI: Esta é a sua carta. Edite o texto nos parágrafos abaixo -->
                 <p>Meu amor,</p>
-                
                 <p>O amor chega em silêncio, como quem não quer nada, e quando percebemos já tomou espaço em cada pensamento.</p>
-                
                 <p>Ele se revela nos detalhes mais simples: no olhar que acolhe, na palavra que conforta, no gesto que cuida sem pedir nada em troca.</p>
-                
                 <p>Aproveite seus dias aí, mas volte logo para o meu abraço.</p>
             </div>
-            
             <p class="font-playfair italic text-3xl text-right mt-12 text-blue-800">
-                Com amor, <br> Fulano 💙
+                Com amor, <br> R 💙
             </p>
         </div>
     </section>
 
-    <!-- Bloco 9: Rodapé -->
     <footer class="py-10 bg-azul-fundo text-center text-gray-600 font-inter text-md fade-in-section">
-        <p>Feito com amor, entre o Rio e a Bahia 🌊 <br> — por alguém que te ama infinitamente. 💙💙💙💙</p>
+        <p>Feito com amor, entre o Rio e a Bahia 🌊 <br> por alguém que te ama infinitamente.</p>
     </footer>
 
-    
-    <!-- 1. Citação flutuante fixa -->
     <div class="floating-quote fixed bottom-4 right-4 bg-white/80 backdrop-blur-sm text-gray-800 text-sm px-4 py-2 rounded-full shadow-md font-inter italic z-50">
          Se clicar 3 vezes no 💙 do título, aparece um “modo secreto”
     </div>
 
-    <!-- 5. Easter Egg (Mensagem Secreta) -->
-    <div id="easter-egg" class="easter-egg hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-500 text-white font-bold text-lg md:text-2xl p-8 rounded-lg shadow-2xl z-[100] text-center" style="opacity: 0;">
-        Desenvolvido por <br> <b>Dev.RM TECH SOLUTIONS</b> 💙
+    <div id="easter-egg" class="easter-egg hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-500 text-white font-bold text-lg md:text-2xl p-8 rounded-lg shadow-2xl z-[100] text-center opacity-0 pointer-events-none">
+        Desenvolvido por <br> <b>Dev. Rodrigo Mateus</b> 💙
     </div>
-            <!-- ... Bloco 9 e 1 (Citação) ... -->
-    
-    <!-- JavaScript para as interações -->
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- Lógica do Efeito de Digitação (SUBTÍTULO - já existia) ---
+            const targetReunionDate = new Date('2026-05-15T12:00:00').getTime(); 
+            const typeWriterText = "Não é nada ainda do que sinto por você!";
+            
+            // --- 1. Efeito Máquina de Escrever ---
             const subtitle = document.getElementById('subtitle');
             if (subtitle) {
-                const textToType = "Não é nada ainda do que sinto por você!";
                 let i = 0;
                 function typeWriter() {
-                    if (i < textToType.length) {
-                        subtitle.innerHTML += textToType.charAt(i);
+                    if (i < typeWriterText.length) {
+                        subtitle.innerHTML += typeWriterText.charAt(i);
                         i++;
-                        setTimeout(typeWriter, 90); // Velocidade da digitação
+                        setTimeout(typeWriter, 90);
                     } else {
-                        // Adiciona o cursor piscando no final
                         subtitle.classList.add('blinking-cursor');
                     }
                 }
-                typeWriter(); // Inicia o efeito
+                typeWriter();
             }
-            
-            // --- 3. Lógica do Efeito de Digitação (TÍTULO PRINCIPAL) REMOVIDA ---
 
-
-            // --- 5. Lógica do Easter Egg ---
+            // --- 2. Lógica do Easter Egg (Corrigida) ---
             const titleClickTarget = document.getElementById('main-title');
             const easterEggEl = document.getElementById('easter-egg');
             let titleClickCount = 0;
@@ -439,44 +328,43 @@
                 titleClickTarget.addEventListener('click', () => {
                     titleClickCount++;
                     
-                    // Reseta se demorar muito entre os cliques
                     setTimeout(() => { titleClickCount = 0; }, 1500); 
 
                     if (titleClickCount === 3) {
+                        // 1. Remove o display:none
                         easterEggEl.classList.remove('hidden');
-                        // Força o navegador a aplicar o 'hidden' antes de mudar a opacidade
-                        setTimeout(() => { easterEggEl.style.opacity = 1; }, 10); 
                         
-                        // Reseta a contagem e esconde a mensagem após 4s
+                        // 2. Aguarda um milissegundo para o navegador registrar a mudança e aplica a opacidade
+                        setTimeout(() => { 
+                            easterEggEl.classList.remove('opacity-0', 'pointer-events-none');
+                            easterEggEl.style.opacity = '1'; 
+                        }, 10); 
+                        
+                        // 3. Reseta e esconde após 4 segundos
                         titleClickCount = 0;
                         setTimeout(() => {
-                            easterEggEl.style.opacity = 0;
-                            // Esconde o elemento do DOM após a transição
-                            setTimeout(() => easterEggEl.classList.add('hidden'), 500); 
+                            easterEggEl.style.opacity = '0';
+                            setTimeout(() => {
+                                easterEggEl.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                            }, 500); 
                         }, 4000);
                     }
                 });
             }
 
-
-            // --- 6. Lógica do Contador Regressivo (Bloco 3) com Animação ---
-            const targetDate = new Date(Date.now() + 30*24*60*60*1000).getTime();
-            // EDITE AQUI: Se quiser alterar a data final, mude a string "YYYY-MM-DDTHH:MM:SS" acima
-            
-            // Helper para aplicar a animação de "jump"
+            // --- 3. Contador Regressivo ---
             function updateNumber(elementId, value) {
                 const el = document.getElementById(elementId);
                 if (el && el.innerText !== value) {
                     el.innerText = value;
                     el.classList.add('jump');
-                    // Remove a classe após a animação para poder pular de novo
                     setTimeout(() => el.classList.remove('jump'), 300);
                 }
             }
 
             const countdownFunction = setInterval(() => {
                 const now = new Date().getTime();
-                const distance = targetDate - now;
+                const distance = targetReunionDate - now;
 
                 if (distance < 0) {
                     clearInterval(countdownFunction);
@@ -490,10 +378,8 @@
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Formata para ter sempre dois dígitos
                 const format = (num) => String(num).padStart(2, '0');
 
-                // Usa o helper para atualizar os números com animação
                 updateNumber('dias', format(days));
                 updateNumber('horas', format(hours));
                 updateNumber('minutos', format(minutes));
@@ -501,62 +387,61 @@
                 
             }, 1000);
 
-
-            // --- Bloco 5: Lógica da Galeria (Carrossel) ---
+            // --- 4. Carrossel da Galeria ---
             const slider = document.getElementById('slider');
             const slides = document.querySelectorAll('#slider > div');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             
-            let currentIndex = 0;
-            const totalSlides = slides.length;
+            if (slider && slides.length > 0) {
+                let currentIndex = 0;
+                const totalSlides = slides.length;
 
-            function updateSlider() {
-                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                function updateSlider() {
+                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateSlider();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateSlider();
+                });
             }
 
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateSlider();
-            });
-
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateSlider();
-            });
-
-            // --- 2. Lógica da Mensagem Interativa (Bloco 7) com Fade ---
+            // --- 5. Mensagem Interativa ---
             const showBtn = document.getElementById('showBtn');
             const hideBtn = document.getElementById('hideBtn');
             const messageContent = document.getElementById('messageContent');
 
-            if (showBtn && messageContent) {
+            if (showBtn && messageContent && hideBtn) {
                 showBtn.addEventListener('click', () => {
                     messageContent.classList.add('is-visible');
                     showBtn.classList.add('hidden');
                 });
-            }
 
-            if (hideBtn && messageContent) {
                 hideBtn.addEventListener('click', () => {
                     messageContent.classList.remove('is-visible');
                     showBtn.classList.remove('hidden');
                 });
             }
 
-            // --- 8. Lógica do Fade-in ao Rolar (IntersectionObserver) ---
+            // --- 6. Scroll Fade-In Observer ---
             const sections = document.querySelectorAll('.fade-in-section');
             const observerOptions = {
-                root: null, // viewport
+                root: null,
                 rootMargin: '0px',
-                threshold: 0.1 // 10% visível
+                threshold: 0.1
             };
             
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Anima apenas uma vez
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);
@@ -564,9 +449,7 @@
             sections.forEach(section => {
                 observer.observe(section);
             });
-
         });
     </script>
-
 </body>
 </html>
